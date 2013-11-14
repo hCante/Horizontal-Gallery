@@ -21,6 +21,7 @@
 		font-size: .8em;
 		font-family: @mainFont;
 		clear: both;
+		float: left;
 		a {
 			color: #DDD;
 		}
@@ -62,6 +63,9 @@
 			color: #555;
 			font-family: @secondaryFont;
 			font-size: 1.4em;
+			@media (min-width: 1024px) {
+				font-size: 1em;
+			}
 		}
 	}
 
