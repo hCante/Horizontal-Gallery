@@ -1,17 +1,71 @@
 /* CSS Reset */
 	@import "reset.less";
 
-/* LESS Elements - http://lesselements.com/ */
+// LESS Elements - http://lesselements.com
 	@import "elements.less";
 
-/* Global */
-	header {
-		&.mainHeader {
-			// styles for the header
+// Variables
+	@mainFont: 			'Crete Round', serif;
+	@secondaryFont: 	sans-serif;
+
+// Global
+	body {
+		background: #f1f1f1;
+	}
+
+// Header or footer...
+	.mainFooter {
+		background: #333;
+		color: #FFF;
+		padding: .6em 2em 1.4em;
+		font-size: .8em;
+		font-family: @mainFont;
+		clear: both;
+		a {
+			color: #DDD;
+		}
+		@media (min-width: 1024px) {
+			position: fixed;
+			bottom:0px;
+			left:0px;
+			width: 100%;
+		}
+		.author, .social {
+			display: block;
+			float: left;
+			margin: 0 1em;
 		}
 	}
 
-/* Gallery */
+// Welcome BLock
+	.welcomeBlock {
+		@media (max-width: 1024px) {
+			clear:both;
+			width: 90% !important;
+			float: left;
+			padding: 3% !important;
+		}
+		h1, h2 { font-weight: normal; }
+		h1.mainTitle a {
+			font-size: 4em;
+			font-family: @mainFont;
+			@media (max-width: 767px) {
+				font-size: 2em;
+			}
+			color: #999;
+			text-decoration: none;
+			line-height: 1em;
+		}
+		h2.subtitle {
+			padding-top: 1em;
+			padding-bottom: 2em;
+			color: #555;
+			font-family: @secondaryFont;
+			font-size: 1.4em;
+		}
+	}
+
+// Gallery
 	section {
 		&.gallery {
 			// Vertical Centering just for +1024px - http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
@@ -26,7 +80,7 @@
 				width: 9500px;
 				height: 550px;
 			}
-			.imageBlock {
+			.imageBlock, .welcomeBlock {
 				float: left;
 				margin: 0 .8em;
 				padding: 0;
@@ -43,6 +97,12 @@
 							height: 550px;
 						}
 					}
+				}
+			}
+			.welcomeBlock {
+				@media (min-width: 1024px) {
+					width: 600px;
+					margin-left: 4em;
 				}
 			}
 		}
